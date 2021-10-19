@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Store Data Application</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel ="stylesheet" href="{{url_for('static', filename = 'store.css')}}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+      <script src="https://unpkg.com/@ag-grid-enterprise/all-modules@26.1.0/dist/ag-grid-enterprise.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="{{url_for('static', filename = 'store.js')}}"> </script>
+
+   </head>
+   <body style = "background-image: url({{ url_for('static', filename='white-bg.png') }})">
+   <ul style = "background-image: url({{ url_for('static', filename='nav.jpg') }})">
+  <li><a href="{{url_for('show_page')}}">Home</a></li>
+  <li><a href="{{url_for('contactpage')}}">Contact</a></li>
+  <li><a style="pointer-events: none; cursor: default; margin-left:450px;  font-size: medium">Store Details Application</a></li>
+  </ul><br>
+      <div style="margin-left:50px">
+         <div style="padding-left: 25px">
+            <label for='start_filter'>Start Date</label>
+            <input type="date" id="start_filter" name="start_filter" style="margin-left:10px">
+            <label for='end_filter' style="margin-left:10px">End Date</label>
+            <input type="date" id="end_filter" name="end_filter" style="margin-left:10px">
+            <button type="button" onclick= "filterRows()" class="btn"  style="margin-left:10px">
+            <span class="glyphicon glyphicon-search"></span> Filter
+            </button>
+               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="margin-left:500px">
+            <span class="glyphicon glyphicon-plus"></span> Add
+            </button>
+            <button type="button" class="btn btn-primary" onclick= "get_data()">
+            <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
+         </div>
+         <div id="myGrid" style="padding: 25px; height: 703px; width:1300px;" class="ag-theme-alpine"></div>
+      </div>
+      <div style="margin: auto; width:1000px" class="modal fade" id="myModal" role = "dialog">
+         <div class="modal-dailog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times</button>
+                  <h4 class="modal-title">Add Row</h4>
+               </div>
+               <form id="myForm" class="form-horizontal">
+                  <div class="modal-body">
+                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="city_input">City:</label>
+                        <div class="col-sm-4">
+                           <input type="text" class="form-control" id="city_input" placeholder="Enter City" name="city_input" required>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="start_input">Start Date:</label>
+                        <div class="col-sm-4">
+                           <input type="date" class="form-control" id="start_input" placeholder="Enter Start Date" name="start_input" required>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="end_input">End Date:</label>
+                        <div class="col-sm-4">
+                           <input type="date" class="form-control" id="end_input" placeholder="Enter End Date" name="end_input" required>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="price_input">Price:</label>
+                        <div class="col-sm-4">
+                           <input type="number" class="form-control" id="price_input" placeholder="Enter Price" name="price_input" required>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="status_input">Status:</label>
+                        <div class="col-sm-4">
+                           <select name="status_input" id="status_input" class="form-control" required>
+                              <option value="">Select</option>
+                              <option value="Once">Once</option>
+                              <option value="Daily">Daily</option>
+                              <option value="Yearly">Yearly</option>
+                              <option value="Seldom">Seldom</option>
+                              <option value="Monthly">Monthly</option>
+                              <option value="Often">Often</option>
+                              <option value="Never">Never</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="color_input">Color:</label>
+                        <div class="col-sm-4">
+                           <input type="text" class="form-control" id="color_input" placeholder="Enter Color" name="color_input" required>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-danger"  data-dismiss="modal">Close</button>
+                     <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

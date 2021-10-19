@@ -1,0 +1,56 @@
+ .action-button {
+border: none;
+color: white;
+padding: 3px 12px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+opacity: 0.7;
+}
+.action-button:hover {
+opacity: 1;
+}
+.action-button.edit {
+background-color: #008cba; /* Blue */
+}
+.action-button.update {
+background-color: #4caf50; /* Green */
+}
+.action-button.delete {
+background-color: #f44336; /* Red */
+}
+.action-button.cancel {
+background-color: #e7e7e7; /* Gray */
+color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1063ab;
+}
+
+li {
+  float: left;
+}
+
+li a{
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+li a:hover{
+  background-color: white;
+}
+
+li a:active{
+  color: blue;
+}
+
+
