@@ -99,7 +99,7 @@ To get a local copy up and running follow these simple example steps.
 
 Name - [Sakshi](https://www.linkedin.com/in/sakshi-gupta-0aa978140/)
 
-Project Link: [RESTful Interface](https://github.com/SakshiGupta2508/twitter-flask)
+Project Link: [RESTful Interface](https://github.com/SakshiGupta2508/flask-postgres)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
